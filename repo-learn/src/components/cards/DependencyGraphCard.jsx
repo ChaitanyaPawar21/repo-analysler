@@ -32,7 +32,7 @@ const initialNodes = [
     type: 'group',
     data: { label: 'Order & Checkout' },
     position: { x: 950, y: 50 },
-    style: { width: 400, height: 250, backgroundColor: 'rgba(168, 85, 247, 0.05)', border: '1px solid rgba(168, 85, 247, 0.3)', borderRadius: 16 },
+    style: { width: 550, height: 250, backgroundColor: 'rgba(168, 85, 247, 0.05)', border: '1px solid rgba(168, 85, 247, 0.3)', borderRadius: 16 },
   },
 
   // --- CHILD NODES ---
@@ -85,7 +85,7 @@ const initialNodes = [
     id: 'node-payment',
     type: 'customNode',
     data: { label: 'Payment Gateway', icon: <Server size={18} />, description: 'Processes secure transactions via third-party providers (Stripe/PayPal).', style: { borderLeftColor: '#a855f7' } },
-    position: { x: 220, y: 80 },
+    position: { x: 320, y: 80 },
     parentId: 'group-checkout',
     extent: 'parent',
   }

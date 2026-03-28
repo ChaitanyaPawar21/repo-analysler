@@ -1,12 +1,14 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Terminal, Search, Code, Cpu } from 'lucide-react';
 import './HomeSearch.css';
 
-export default function HomeSearch({ onSearch }) {
+export default function HomeSearch() {
   const containerRef = useRef(null);
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -20,13 +22,13 @@ export default function HomeSearch({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query.trim()) {
-      onSearch(query);
+      navigate('/analysis/' + query);
     }
   };
 
   const handleChipClick = (repo) => {
     setQuery(repo);
-    onSearch(repo);
+    navigate('/analysis/' + repo);
   };
 
   return (

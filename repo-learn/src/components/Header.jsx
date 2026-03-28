@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { Star, GitFork, Code2, MessageSquare, Play } from 'lucide-react';
 import './Header.css';
 
-export default function Header({ query, onOpenChat, onHomeClick }) {
+export default function Header({ query, onOpenChat }) {
   const headerRef = useRef(null);
 
   const [org, repo] = query ? query.split('/') : ['facebook', 'react'];

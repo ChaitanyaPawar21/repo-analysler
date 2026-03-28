@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Terminal, Plus, Code, Folder, Settings, User } from 'lucide-react';
@@ -11,8 +12,11 @@ const MOCK_REPOS = [
   { id: 4, name: 'sveltejs/svelte', active: false },
 ];
 
-export default function Sidebar({ onHomeClick }) {
+export default function Sidebar() {
   const sidebarRef = useRef(null);
+  const navigate = useNavigate();
+  
+  const goHome = () => navigate('/');
 
   useGSAP(() => {
     gsap.fromTo(
@@ -31,11 +35,11 @@ export default function Sidebar({ onHomeClick }) {
   return (
     <aside className="sidebar glass-panel" ref={sidebarRef}>
       <div className="sidebar-header">
-        <div className="logo" onClick={onHomeClick} style={{cursor: 'pointer'}}>
+        <div className="logo" onClick={goHome} style={{cursor: 'pointer'}}>
           <Terminal size={24} color="var(--color-accent-blue)" />
           <span>Repo-Learn</span>
         </div>
-        <button className="new-analysis-btn" onClick={onHomeClick}>
+        <button className="new-analysis-btn" onClick={goHome}>
           <Plus size={16} />
           <span>New Analysis</span>
         </button>

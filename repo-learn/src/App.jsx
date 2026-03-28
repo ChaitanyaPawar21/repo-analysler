@@ -1,40 +1,30 @@
 import React, { useState } from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
 import HomeSearch from './components/HomeSearch';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 import ChatPanel from './components/ChatPanel';
 import FloatingChatButton from './components/FloatingChatButton';
-
 import './App.css';
 
-function App() {
-  const [currentView, setCurrentView] = useState('home'); // 'home' or 'dashboard'
+// Layout wrapper for Dashboard pages
+function DashboardLayout() {
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    setCurrentView('dashboard');
-  };
-
   const toggleChat = () => setIsChatOpen((prev) => !prev);
   const closeChat = () => setIsChatOpen(false);
   
-  const goHome = () => setCurrentView('home');
-
-  if (currentView === 'home') {
-    return <HomeSearch onSearch={handleSearch} />;
-  }
+  // Extract owner/repo from URL
+  const { owner, repo } = useParams();
+  const query = owner && repo ? `${owner}/${repo}` : '';
 
   return (
     <div className="app-container">
-      <Sidebar onHomeClick={goHome} />
+      <Sidebar />
       <div className={`main-area ${isChatOpen ? 'chat-open' : ''}`}>
         <Header 
-          query={searchQuery} 
+          query={query} 
           onOpenChat={toggleChat} 
-          onHomeClick={goHome} 
         />
         <main className="content-scroll">
           <Dashboard />
@@ -43,6 +33,15 @@ function App() {
       <ChatPanel isOpen={isChatOpen} onClose={closeChat} />
       <FloatingChatButton onClick={toggleChat} isOpen={isChatOpen} />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomeSearch />} />
+      <Route path="/analysis/:owner/:repo" element={<DashboardLayout />} />
+    </Routes>
   );
 }
 
