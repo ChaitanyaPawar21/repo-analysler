@@ -1,0 +1,68 @@
+:root {
+  --color-bg-deep: #0B0F19;
+  --color-bg-dark: #0F172A;
+  --color-bg-card: rgba(15, 23, 42, 0.6);
+  --color-accent-blue: #2563EB;
+  --color-accent-hover: #3B82F6;
+  --color-text-main: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-border-glow: rgba(37, 99, 235, 0.3);
+  --color-border: #1E293B;
+  
+  --font-ui: 'Inter', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+  
+  --shadow-glow: 0 4px 20px rgba(37, 99, 235, 0.15);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-main);
+  overflow: hidden; /* App layout will handle scrolling */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+.glass-panel {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+code {
+  font-family: var(--font-code);
+}

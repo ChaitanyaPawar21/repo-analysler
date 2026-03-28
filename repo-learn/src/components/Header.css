@@ -1,0 +1,84 @@
+.repo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: var(--color-bg-deep); /* Keep it dark github style */
+  z-index: 5;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.repo-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.repo-title span {
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.repo-metadata {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.lang-badge {
+  color: #F7DF1E; /* JS Yellow */
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-primary, .btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-accent-blue), #3B82F6);
+  color: white;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+}
