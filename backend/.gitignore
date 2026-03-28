@@ -1,0 +1,216 @@
+# =============================================================================
+# Python / FastAPI Backend — Production .gitignore
+# =============================================================================
+
+# =============================================================================
+# 1. Python Bytecode & Runtime
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# C extensions
+*.so
+
+# =============================================================================
+# 2. Virtual Environments
+# =============================================================================
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+pip-selfcheck.json
+
+# =============================================================================
+# 3. Environment Variables & Secrets
+# =============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+secrets.yaml
+secrets.json
+
+# =============================================================================
+# 4. IDE & Editor Files
+# =============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (PyCharm, IntelliJ)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim / Neovim
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Emacs
+*~
+\#*\#
+.dir-locals.el
+
+# =============================================================================
+# 5. OS-Generated Files
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+
+# =============================================================================
+# 6. Database & Data Storage
+# =============================================================================
+
+# SQLite (local dev / test)
+*.sqlite3
+*.db
+
+# PostgreSQL
+*.sql.gz
+*.dump
+
+# FAISS vector index (local storage — regenerated at runtime)
+/data/faiss_index/
+faiss_index/
+*.faiss
+
+# Cloned repositories (local analysis data)
+/data/repos/
+repos/
+
+# General data directory (large / generated files)
+/data/
+
+# =============================================================================
+# 7. Logs & Monitoring
+# =============================================================================
+*.log
+logs/
+*.log.*
+log/
+
+# =============================================================================
+# 8. Testing & Coverage
+# =============================================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.tox/
+.nox/
+nosetests.xml
+junit.xml
+test-results/
+
+# =============================================================================
+# 9. Build, Packaging & Distribution
+# =============================================================================
+dist/
+build/
+*.egg-info/
+*.egg
+sdist/
+wheels/
+*.whl
+MANIFEST
+pip-wheel-metadata/
+
+# =============================================================================
+# 10. Celery & Redis (future integration)
+# =============================================================================
+celerybeat-schedule
+celerybeat.pid
+celerybeat-schedule.db
+*.pid
+
+# Redis dump
+dump.rdb
+
+# =============================================================================
+# 11. Docker (if containerized later)
+# =============================================================================
+docker-compose.override.yml
+.docker/
+
+# =============================================================================
+# 12. Alembic (database migrations — keep migrations, ignore temp files)
+# =============================================================================
+alembic/versions/__pycache__/
+
+# =============================================================================
+# 13. Jupyter Notebooks (if used for prototyping)
+# =============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# =============================================================================
+# 14. Type Checking & Linting Cache
+# =============================================================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.ruff_cache/
+.pylint.d/
+
+# =============================================================================
+# 15. Profiling & Debugging
+# =============================================================================
+*.prof
+*.lprof
+*.cachegrind
+*.callgrind
+
+# =============================================================================
+# 16. Misc
+# =============================================================================
+*.bak
+*.tmp
+*.temp
+*.orig
+.cache/
+.parcel-cache/
+*.manifest
+*.spec
