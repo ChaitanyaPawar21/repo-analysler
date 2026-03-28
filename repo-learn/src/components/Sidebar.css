@@ -1,0 +1,115 @@
+.sidebar {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--color-border);
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  z-index: 10;
+}
+
+.sidebar-header {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.new-analysis-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.new-analysis-btn:hover {
+  border-color: var(--color-accent-blue);
+  background-color: var(--color-bg-dark);
+  box-shadow: var(--shadow-glow);
+}
+
+.sidebar-content {
+  flex: 1;
+  padding: 0 16px;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding-left: 8px;
+}
+
+.repo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.repo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.repo-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-main);
+}
+
+.repo-item.active {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--color-accent-blue);
+  font-weight: 500;
+}
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-main);
+}

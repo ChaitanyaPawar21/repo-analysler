@@ -1,0 +1,43 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-bg-deep);
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: padding-right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  /* On desktop, shrinking the main area slightly when chat opens */
+  .main-area.chat-open {
+    padding-right: 35%; /* Same as ChatPanel width */
+  }
+}
+
+.content-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px;
+  /* subtle custom scrollbar for main area */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.content-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.content-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+/* Animations will be handled by GSAP or CSS transitions down the tree */

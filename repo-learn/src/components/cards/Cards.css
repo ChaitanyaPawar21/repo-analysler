@@ -1,0 +1,177 @@
+/* Common Card Styling Helpers */
+
+/* Folder Structure */
+.folder-card {
+  min-height: 280px;
+}
+.folder-tree-container {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.tree-node {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  user-select: none;
+}
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.tree-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.node-name {
+  color: var(--color-text-main);
+}
+.tree-children {
+  margin-top: 2px;
+}
+
+/* Dependency Graph */
+.graph-card {
+  min-height: 280px;
+  overflow: visible;
+}
+.graph-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.node-text {
+  font-family: var(--font-ui);
+  pointer-events: none;
+}
+
+/* Execution Flow */
+.flow-card {
+  min-height: 140px;
+}
+.flow-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex: 1;
+}
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step-box {
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Critical Files */
+.critical-files-card {
+  min-height: 260px;
+}
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.rank-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+.rank-item:hover {
+  border-color: rgba(239, 68, 68, 0.4); /* subtle red hover for critical files */
+}
+.rank-number {
+  font-weight: 700;
+  color: var(--color-text-muted);
+  width: 20px;
+}
+.rank-path {
+  flex: 1;
+  margin: 0 16px;
+  color: var(--color-text-main);
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.score-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+.score-badge.high {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+}
+.score-badge.medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+}
+
+/* AI Overview Card */
+.ai-card {
+  min-height: 260px;
+}
+.ai-bubble {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+.ai-avatar {
+  background: var(--color-accent-blue);
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px var(--color-accent-blue);
+}
+.ai-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-main);
+}
+.ai-text p {
+  margin-bottom: 12px;
+}
+.ai-text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.ai-text li {
+  margin-bottom: 8px;
+  color: var(--color-text-muted);
+}
+.ai-text code {
+  color: var(--color-text-main);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

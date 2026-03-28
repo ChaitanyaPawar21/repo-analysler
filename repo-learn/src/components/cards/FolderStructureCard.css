@@ -1,0 +1,197 @@
+.fs-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  padding: 0; /* Removing default padding to style custom inner layout */
+}
+
+.fs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.fs-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.fs-header-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-glow);
+}
+
+.fs-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* handle scroll in children */
+}
+
+/* Left side: Tree */
+.fs-tree-container {
+  width: 45%;
+  border-right: 1px solid var(--color-border);
+  padding: 16px 8px;
+  overflow-y: auto;
+  /* subtle scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.fs-tree-container::-webkit-scrollbar { width: 6px; }
+.fs-tree-container::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+
+.fs-tree-node {
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.fs-tree-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  margin-bottom: 2px;
+  color: var(--color-text-main);
+}
+
+.fs-tree-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.fs-tree-row.selected {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border-left: 3px solid var(--color-accent-blue);
+  box-shadow: inset 20px 0 20px -20px var(--color-accent-blue); /* Neon left glow */
+}
+
+.fs-collapse-icon {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.fs-type-icon {
+  display: flex;
+  align-items: center;
+}
+
+.fs-node-name {
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+.fs-tree-row.selected .fs-node-name {
+  color: #fff;
+  font-weight: 500;
+}
+
+.fs-tree-children {
+  margin-top: 2px;
+}
+
+/* Right side: Active Details */
+.fs-detail-container {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.fs-detail-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.fs-detail-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideInBox 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInBox {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fs-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fs-detail-header h3 {
+  font-family: var(--font-code);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.fs-detail-type-badge {
+  align-self: flex-start;
+  padding: 4px 10px;
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+}
+
+.fs-detail-explanation {
+  background: var(--color-bg-deep);
+  border: 1px solid rgba(168, 85, 247, 0.2); /* Slight purple hue for AI context */
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 8px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.fs-detail-ai-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(168, 85, 247, 0.1);
+  padding: 4px 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  margin-bottom: 16px;
+}
+
+.fs-detail-ai-tag span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #c084fc;
+}
+
+.fs-detail-explanation p {
+  color: var(--color-text-main);
+  line-height: 1.6;
+  font-size: 1rem;
+}
